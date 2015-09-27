@@ -11,7 +11,7 @@ var mapping = {
 };
 
 function getreq(direction){
-    var req = new XMLHttpRequest(), url = '/key/' + 'direction';
+    var req = new XMLHttpRequest(), url = '/key/' + direction;
     req.open( "GET", url, false);
     req.send( null );
 }
