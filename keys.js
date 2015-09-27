@@ -12,8 +12,8 @@ var mapping = {
 
 function connect(value){
   console.log(value);
-  if(value){ document.getElementById('yes').style.display = inherit; document.getElementById('no').style.display = none; }
-  else if(!value){ document.getElementById('yes').style.display = none; document.getElementById('no').style.display = inherit; }
+  if(value){ document.getElementById('yes').display = 'inherit'; document.getElementById('no').display = 'none'; }
+  else if(!value){ document.getElementById('yes').display = 'none'; document.getElementById('no').display = 'inherit'; }
 }
 
 function getreq(direction){
