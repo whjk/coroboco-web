@@ -10,7 +10,7 @@
 .box h1 { font-size: 300%; }
 .box i { font-size: 100%; }
 #yes { display: none; color: #00bf00; }
-#nope { display: inherit; color: #ff0000; }
+#nope { color: #ff0000; }
 
 
 #title {

@@ -10,29 +10,13 @@ var mapping = {
 
 };
 
-$(document).ready(function(){
-    $("#hide").click(function(){
-        $("p").hide();
-    });
-    $("#show").click(function(){
-        $("p").show();
-    });
-});
-
-
-function connect(value){
-  console.log(value);
-  if(value){ document.getElementById('yes').style.display = 'block'; document.getElementById('no').style.display = 'none'; }
-  else if(!value){ document.getElementById('yes').style.display = 'none'; document.getElementById('no').style.display = 'block'; }
-}
-
 function getreq(direction){
     var req = new XMLHttpRequest(), url = '/key/' + direction;
     req.onreadystatechange = function() {
         if (req.readyState == 4 && req.status == 200){
             $(document).ready(function(){
-              if(req.responseText === 'true'){ $("#no").hide(); $("#yes").show();  }
-              else if(req.responseText === 'false'){ $("#yes").hide(); $("#no").show();  }
+              if(req.responseText === 'true'){ $("#nope").hide(); $("#yes").show();  }
+              else if(req.responseText === 'false'){ $("#yes").hide(); $("#nope").show();  }
             });
         }
     }
