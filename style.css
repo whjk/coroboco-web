@@ -12,6 +12,16 @@
 #yes { display: none; color: #00bf00; }
 #nope { color: #ff0000; }
 
+#list {
+	text-align: center;
+	margin-top: 3%;
+	font-size: 25px;
+	font-family: monospace;
+}
+
+#list ul li {
+	display: inline;
+}
 
 #title {
 	color: #FFF;
