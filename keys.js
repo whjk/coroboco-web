@@ -21,8 +21,8 @@ function getreq(direction){
         if (req.readyState == 4 && req.status == 200)
             connect(req.responseText);
     }
-    xmlHttp.open("GET", url, true); // true for asynchronous
-    xmlHttp.send(null);
+    req.open("GET", url, true); // true for asynchronous
+    req.send(null);
 }
 
 $(document.documentElement).keydown(function(event){
