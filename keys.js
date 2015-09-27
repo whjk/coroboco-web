@@ -15,13 +15,14 @@ function connect(value){
   else if(!value){ document.getElementById('yes').display = none; document.getElementById('no').display = inherit; }
 }
 
-
-
 function getreq(direction){
     var req = new XMLHttpRequest(), url = '/key/' + direction;
-    req.open( "GET", url, false);
-    req.send( null );
-    return req.responseText;
+    xmlHttp.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200)
+            connect(req.responseText);
+    }
+    xmlHttp.open("GET", url, true); // true for asynchronous
+    xmlHttp.send(null);
 }
 
 $(document.documentElement).keydown(function(event){
@@ -33,8 +34,8 @@ $(document.documentElement).keyup(function(event){
 
     var key = mapping[event.keyCode];
     if (key) $(key).removeClass('pressed');
-    if(key == ".up"){ connect(getreq("up")); }
-    else if(key == ".down"){ connect(getreq("down")); }
-    else if(key == ".left"){ connect(getreq("left")); }
-    else if(key == ".right"){ connect(getreq("right")); }
+    if(key == ".up"){ getreq("up"); }
+    else if(key == ".down"){ getreq("down"); }
+    else if(key == ".left"){ getreq("left"); }
+    else if(key == ".right"){ getreq("right"); }
 });
