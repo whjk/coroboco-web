@@ -11,6 +11,7 @@ var mapping = {
 };
 
 function connect(value){
+  console.log(value);
   if(value){ document.getElementById('yes').display = inherit; document.getElementById('no').display = none; }
   else if(!value){ document.getElementById('yes').display = none; document.getElementById('no').display = inherit; }
 }
