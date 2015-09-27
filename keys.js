@@ -10,10 +10,18 @@ var mapping = {
 
 };
 
+function connect(value){
+  if(value){ document.getElementById('yes').display = inherit; document.getElementById('no').display = none; }
+  else if(!value){ document.getElementById('yes').display = none; document.getElementById('no').display = inherit; }
+}
+
+
+
 function getreq(direction){
     var req = new XMLHttpRequest(), url = '/key/' + direction;
     req.open( "GET", url, false);
     req.send( null );
+    return req.responseText;
 }
 
 $(document.documentElement).keydown(function(event){
@@ -22,10 +30,11 @@ $(document.documentElement).keydown(function(event){
 });
 
 $(document.documentElement).keyup(function(event){
+
     var key = mapping[event.keyCode];
     if (key) $(key).removeClass('pressed');
-    if(key == ".up"){ getreq("up"); }
-    else if(key == ".down"){ getreq("down"); }
-    else if(key == ".left"){ getreq("left"); }
-    else if(key == ".right"){ getreq("right"); }
+    if(key == ".up"){ connect(getreq("up")); }
+    else if(key == ".down"){ connect(getreq("down")); }
+    else if(key == ".left"){ connect(getreq("left")); }
+    else if(key == ".right"){ connect(getreq("right")); }
 });

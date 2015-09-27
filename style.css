@@ -1,19 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:900);
 
 .box {
-	width: 300px;
+	width: 500px;
 	height: 100px;
-	border: inset white 1em;
 	margin: 5% auto;
-
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
 }
+.box h1 { font-size: 300%; }
+.box i { font-size: 100%; }
+#yes { display: none; color: #00bf00; }
+#nope { display: inherit; color: #ff0000; }
+
 
 #title {
 	color: #FFF;
 	font-size: 400%;
 	font-family: 'Roboto', sans-serif;
 	text-align: center;
-	margin-top: 30%;
+	margin-top: 40%;
 }
 
 
@@ -34,7 +39,7 @@
 
 .keys {
 	font-family: monospace;
-  margin-top: 45%;
+  margin-top: 40%;
   text-align: center;
   line-height: 8rem;
 }
