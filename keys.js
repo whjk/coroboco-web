@@ -10,6 +10,12 @@ var mapping = {
 
 };
 
+function getreq(direction){
+    var req = new XMLHttpRequest(), url = '/key/' + 'direction';
+    req.open( "GET", url, false);
+    req.send( null );
+}
+
 $(document.documentElement).keydown(function(event){
     var key = mapping[event.keyCode];
     if (key) $(key).addClass('pressed');
@@ -18,4 +24,8 @@ $(document.documentElement).keydown(function(event){
 $(document.documentElement).keyup(function(event){
     var key = mapping[event.keyCode];
     if (key) $(key).removeClass('pressed');
+    if(key == ".up"){ getreq("up"); }
+    else if(key == ".down"){ getreq("down"); }
+    else if(key == ".left"){ getreq("left"); }
+    else if(key == ".right"){ getreq("right"); }
 });
