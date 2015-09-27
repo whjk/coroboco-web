@@ -17,7 +17,7 @@ function connect(value){
 
 function getreq(direction){
     var req = new XMLHttpRequest(), url = '/key/' + direction;
-    xmlHttp.onreadystatechange = function() {
+    req.onreadystatechange = function() {
         if (req.readyState == 4 && req.status == 200)
             connect(req.responseText);
     }
